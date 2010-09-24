@@ -1,0 +1,3 @@
+include AUTHORS
+include README.txt
+recursive-include cmsplugin_photologue/templates *
