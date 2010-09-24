@@ -7,7 +7,7 @@ Download: http://github.com/adamcupial/cmsplugin-photologue
 Requirements:
 - django-photologue >= trunk r407
 - django-cms-2.1
-- django = 1.1.1
+- django = 1.2
 
 Setup
 - make sure requirements are installed and properly working
@@ -21,13 +21,13 @@ Setup
 Optional
 - the photologue default templates extend a 'base.html', while django-cms uses a default 'index.html'. quick solution: create a 'base.html' placeholder template which extends 'index.html'. see 'cmsplugin_photologue/templates/base.html' for an example.
 - recommended: install cms-context_processors (or your own), so {{ site }} will work in photologue pages attached to cms pages. NB: this should be fixed in latest django-cms trunk. does it work for anyone?
-- define CMSPLUGIN_PHOTOLOGUE_SAMPLE_SIZE, CMSPLUGIN_PHOTOLOGUE_CSS_CHOICES in settings.py
+- define CMSPLUGIN_PHOTOLOGUE_CSS_CHOICES in settings.py
 - copy cmsplugin_photologue/templates/plugins/ to your project directory
 
 Todo:
 - create variable to control root view displayed when attaching app to cms page
-- define CMSPLUGIN_PHOTOLOGUE_SAMPLE_SIZE per plugin
 - cache navigation extenders
+- some js gallery extensions
 
 Example Projects:
 - are stripped down, slightly modified versions of django-cms' example project for each relevant version
@@ -40,9 +40,6 @@ Examples (settings.py):
 CMSPLUGIN_PHOTOLOGUE_CSS_CHOICES = (('0', ''),('1', 'left'),('2', 'right'),('3', 'center'),) )
 - adds an optional css class to the gallery or photo enclosing div in the plugin templates
 
-CMSPLUGIN_PHOTOLOGUE_SAMPLE_SIZE = 3
-- overrides photologue.urls.SAMPLE_SIZE : 'Number of random images from the gallery to display.'
-
 
 Note:
-This is not great code, but it works. Please tell me how to make it better!
+I forked the repo and added some additional goodies - defining photo sizes when adding a photo, better img tags (with sizes), some options for displaying (show_title, show_link), default sorting (with random option)

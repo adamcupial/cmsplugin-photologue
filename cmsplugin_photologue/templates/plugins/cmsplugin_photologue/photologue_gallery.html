@@ -1,16 +1,38 @@
+{% load plimage_tags i18n %}
 
-    <div class="photo-gallery{% if css %} {{ css }}{% endif %}">
+<div class="photo-gallery{% if css %} {{ css }}{% endif %}">
+{% if show_title %}
+<h2 class="gallery-title">
+    {% if link_to_gallery %}
+    <a href="{{ gallery.get_absolute_url }}">
+    {% endif %}
+        {{ gallery.title }}
+    {% if link_to_gallery %}
+    </a>
+    {% endif %}
+</h2>
+{% endif %}
 
-        <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+{% for photo in photos %}
 
-        {% for photo in gallery.sample|slice:sample_size %}
+    <div class="gallery-photo{% if css %} {{ css }}{% endif %} gallery-photo-{{ forloop.counter }}">
 
-        <div class="gallery-photo">
-
-            <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>
-
-        </div>
-
-        {% endfor %}
-
+        {% if link_to_full_image %}
+        <a href="{{ photo.image.url }}" class="gallery-photo-image-link">
+        {% endif %}
+            {% render_pl_image photo size %}
+        {% if link_to_full_image %}
+        </a>
+        {% endif %}
+    
+        {% if photo.caption and show_caption %}
+        <div class="gallery-photo-caption">{{ photo.caption }}</div>
+        {% endif %}
+   
     </div>
+
+{% endfor %}
+{% if not show_title and link_to_gallery %}
+<a href="{{ gallery.get_absolute_url }}" title="{% trans "show more pictures from" %} {{ gallery.title|escape }}">{% trans "show more" %}</a>
+{% endif %}
+</div>

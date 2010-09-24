@@ -1,8 +1,17 @@
+{% load plimage_tags %}
 
     <div class="gallery-photo{% if css %} {{ css }}{% endif %}">
+
+        {% if link_to_full_image %}
+        <a href="{{ photo.image.url }}" class="gallery-photo-image-link">
+        {% endif %}
+            {% render_pl_image photo size %}
+        {% if link_to_full_image %}
+        </a>
+        {% endif %}
     
-        <a href="{{ photo.image.url }}"><img src="{% ifequal is_thumb '1' %}{{ photo.get_thumbnail_url }}{% else %}{{ photo.get_display_url }}{% endifequal %}" alt="{{ photo.title }}"/></a>
-    
-        {% if photo.caption %}<p>{{ photo.caption }}</p>{% endif %}
-    
+        {% if photo.caption and show_caption %}
+        <div class="gallery-photo-caption">{{ photo.caption }}</div>
+        {% endif %}
+   
     </div>

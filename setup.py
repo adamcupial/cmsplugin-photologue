@@ -17,8 +17,8 @@ setup(
     license='BSD License',
     platforms=['OS Independent'],
     requires=[
-        'django (>=1.1.0)',
-        'cms (>=2.0.2)',
+        'django (>=2.1.0)',
+        'cms (>=1.2)',
     ],
     
     packages=find_packages(),
@@ -29,6 +29,8 @@ setup(
     package_data = {
         'cmsplugin_photologue': [
             'templates/*.html',
+            'locale/*.mo',
+            'locale/*.po',
             'templates/plugins/cmsplugin_photologue/*.html',
         ],
     },

@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-24 23:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: cms_plugins.py:10
+msgid "Photologue Gallery"
+msgstr "Photologue Gallery"
+
+#: cms_plugins.py:45
+msgid "Photologue Photo"
+msgstr "Photologue Photo"
+
+#: models.py:16
+msgid "Gallery"
+msgstr "Gallery"
+
+#: models.py:17
+msgid "Link to gallery?"
+msgstr "Display link to gallery?"
+
+#: models.py:18
+msgid "Show gallery title?"
+msgstr "Show gallery title?"
+
+#: models.py:19
+msgid "Show random images?"
+msgstr "Get random images?"
+
+#: models.py:20
+msgid "If unchecked images will be sorted according to the date"
+msgstr "If unchecked images will be sorted according to the date added"
+
+#: models.py:21 models.py:36
+msgid "Show caption?"
+msgstr "Show caption?"
+
+#: models.py:23 models.py:37
+msgid "Link to full image?"
+msgstr "Link to full sized image?"
+
+#: models.py:25
+msgid "Gallery sample limit"
+msgstr "Shown images limit"
+
+#: models.py:26
+msgid "0 - unlimited"
+msgstr "0 - unlimited"
+
+#: models.py:27 models.py:38
+msgid "Photo size"
+msgstr "Photo size"
+
+#: models.py:31 models.py:42
+msgid "Additional CSS class to apply"
+msgstr "Additional CSS class to apply"
+
+#: models.py:32 models.py:43
+msgid "CSS class"
+msgstr "CSS class"
+
+#: models.py:35
+msgid "Photo"
+msgstr "Photo"
+
+#: templates/plugins/cmsplugin_photologue/photologue_gallery.html:36
+msgid "show more pictures from"
+msgstr "show more pictures from"
+
+#: templates/plugins/cmsplugin_photologue/photologue_gallery.html:36
+msgid "show more"
+msgstr "show more"

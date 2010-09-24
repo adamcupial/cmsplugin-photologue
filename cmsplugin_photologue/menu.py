@@ -1,6 +1,6 @@
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
-from cms.utils.navigation import NavigationNode
+from menus.base import NavigationNode
 from photologue.models import Gallery, Photo
 from photologue.urls import gallery_args, photo_args
 
