@@ -2,12 +2,16 @@
 
     <div class="gallery-photo{% if css %} {{ css }}{% endif %}">
 
-        {% if link_to_full_image %}
+        {% if link_to_full_image and not link_to_page %}
         <a href="{{ photo.image.url }}" class="gallery-photo-image-link">
-        {% endif %}
             {% render_pl_image photo size %}
-        {% if link_to_full_image %}
         </a>
+        {% else %}
+        {% if link_to_page %}
+            <a href="{{ link_to_page }}" class="gallery-photo-page-link">
+                {% render_pl_image photo size %}
+            </a>
+        {% endif %}
         {% endif %}
     
         {% if photo.caption and show_caption %}

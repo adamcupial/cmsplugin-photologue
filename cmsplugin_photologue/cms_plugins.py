@@ -52,6 +52,7 @@ class CMSPhotologuePhotoPlugin(CMSPluginBase):
                         'size' : instance.size,
                         'show_caption':instance.show_caption,
                         'link_to_full_image':instance.link_to_full_image,
+                        'link_to_page':instance.page_link,
                         'css' : instance.get_css_display(),
                         'queryset':Photo.objects.filter(is_public=True)})
         return context

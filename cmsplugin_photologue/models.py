@@ -1,5 +1,5 @@
 from django.db import models
-from cms.models import CMSPlugin
+from cms.models import CMSPlugin, Page
 from photologue.models import *
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
@@ -33,6 +33,14 @@ class PhotologueGalleryPlugin(CMSPlugin):
 
 class PhotologuePhotoPlugin(CMSPlugin):
     photo = models.ForeignKey(Photo,verbose_name=_('Photo'))
+    page_link = models.ForeignKey(
+        Page, 
+        verbose_name=_("page"), 
+        help_text=_("If present image will be clickable"), 
+        blank=True, 
+        null=True, 
+        limit_choices_to={'publisher_is_draft': True}
+    )
     show_caption = models.BooleanField(verbose_name=_('Show caption?'))
     link_to_full_image = models.BooleanField(verbose_name=_('Link to full image?'))
     size = models.ForeignKey(PhotoSize,verbose_name=_('Photo size'))
